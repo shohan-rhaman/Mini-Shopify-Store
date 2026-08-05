@@ -1,4 +1,8 @@
 const productList = document.querySelector("#product-list")
+const cartCountElement = document.querySelector("#cart-count")
+
+let cartCountValue = 0;
+
 
 products.forEach(product =>{
     
@@ -30,24 +34,20 @@ products.forEach(product =>{
     // Render
     productList.appendChild(productCard)
 
-
+    
     // Add to Cart (UI Only)
     addToCartButton.addEventListener("click", (event) => {
+
     event.target.textContent = "Added ✓";
     event.target.classList.add("added");
     event.target.disabled = true;
 
-    console.log(event.target.disabled);
-
-    //console.log(event.target.disabled);
+    // Cart counter impelement
+    cartCountValue++;
+    cartCountElement.textContent = `🛒 Cart (${cartCountValue})`
 
     });
 
-    
-
-    
-
-
-
 
 })
+
