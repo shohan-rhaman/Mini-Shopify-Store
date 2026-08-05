@@ -29,7 +29,7 @@ products.forEach(product =>{
 
     // Render
     productList.appendChild(productCard)
-    
+
 
     // Add to Cart (UI Only)
     addToCartButton.addEventListener("click", (event) => {
@@ -38,6 +38,8 @@ products.forEach(product =>{
     event.target.disabled = true;
 
     console.log(event.target.disabled);
+
+    //console.log(event.target.disabled);
 
     });
 

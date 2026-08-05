@@ -110,3 +110,21 @@ Concepts You'll Use
 ✅ textContent
 ✅ classList.add()
 ✅ disabled
+
+
+============================================================================================
+
+# 🚀 Now let's build the first real e-commerce feature.
+
+Sprint 2 – Feature 2: Cart Counter
+
+We're going to build this:
+
+Mini Shopify Store
+🛒 Cart (0)
+
+When the customer clicks: "Add to Cart" it should become: 🛒 Cart (1)
+
+Click another product: 🛒 Cart (2)
+
+Click another: 🛒 Cart (3)
