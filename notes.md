@@ -128,3 +128,57 @@ When the customer clicks: "Add to Cart" it should become: 🛒 Cart (1)
 Click another product: 🛒 Cart (2)
 
 Click another: 🛒 Cart (3)
+
+
+============================================================================
+
+# 🛒 Sprint 2 — Feature 3: Toggle Cart
+
+🎯 Current Behavior
+
+Click
+Add to Cart
+      ↓
+Added ✓
+
+
+Once clicked...
+❌ It can never go back.
+
+
+🎯 New Behavior
+
+Click
+Add to Cart
+      ↓
+Added ✓
+
+
+Click again
+Added ✓
+      ↓
+Add to Cart
+
+Now the customer can remove the item from the cart.
+
+What Should Happen?  First Click
+
+Button:
+Add to Cart
+
+↓
+
+Button:
+Added ✓
+Cart (1)
+
+
+Second Click
+Button:
+Added ✓
+
+↓
+
+Button:
+Add to Cart
+Cart (0)
