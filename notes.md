@@ -182,3 +182,62 @@ Added ✓
 Button:
 Add to Cart
 Cart (0)
+
+
+===============================================================================
+
+# 🛒 Mini Shopify Store — Feature: Real Cart Data
+
+So far we have:
+
+Product List
+      ↓
+Add to Cart
+      ↓
+Cart (1)
+Cart (2)
+Cart (3)
+
+But our cart currently only stores a number.
+
+let cartCountValue = 0;
+
+That's not enough for a real store.
+
+
+🎯 New Goal
+
+Create an actual cart array:
+
+const cart = [];
+
+When a customer clicks Add to Cart, the actual product object should go into the cart.
+
+For example:
+
+Initial state
+cart = [];
+
+Click Nike
+cart = [
+    {
+        id: 1,
+        name: "Nike Air Max",
+        category: "Shoes",
+        price: 120,
+        stock: 10
+    }
+];
+
+
+Click Adidas
+cart = [
+    Nike,
+    Adidas
+];
+
+
+Click Nike again Nike should be removed:
+cart = [
+    Adidas
+];
