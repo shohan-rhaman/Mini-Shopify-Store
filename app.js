@@ -38,12 +38,16 @@ products.forEach(product =>{
     // Add to Cart (UI Only)
     addToCartButton.addEventListener("click", (event) => {
 
-    event.target.textContent = "Added ✓";
-    event.target.classList.add("added");
-    event.target.disabled = true;
-
-    // Cart counter impelement
-    cartCountValue++;
+    if(event.target.textContent === "Add to Cart"){
+        event.target.textContent = "Added ✓";
+        event.target.classList.add("added");
+        cartCountValue++;
+    }else{
+        event.target.textContent = "Add to Cart"
+        cartCountValue--
+        event.target.classList.remove("added")
+    }
+    
     cartCountElement.textContent = `🛒 Cart (${cartCountValue})`
 
     });
