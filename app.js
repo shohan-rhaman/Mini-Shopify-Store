@@ -42,8 +42,29 @@ products.forEach(product =>{
 
     // Selected product
     const selectedProduct = product.name
+    
+    const isCart = cart.some(item =>{
+        return item === selectedProduct
+    })
 
-    if(event.target.textContent === "Add to Cart"){
+
+    // apply condition is the prodcut exist or not? true or false?
+    if(!isCart){
+        cart.push(selectedProduct)
+        event.target.textContent = "Added ✓"
+        event.target.classList.add("added")
+    }else{
+        event.target.textContent = "Add to Cart"
+        event.target.classList.remove("added")
+
+        // remove cart item
+        cart = cart.filter(item =>{
+            return item !== selectedProduct
+        })
+    }
+
+
+    /*if(event.target.textContent === "Add to Cart"){
         event.target.textContent = "Added ✓";
         event.target.classList.add("added");
         //cartCountValue++;
@@ -59,7 +80,7 @@ products.forEach(product =>{
         cart = cart.filter(item =>{
             return item !== selectedProduct
         })
-    }
+    } */
     
     cartCountElement.textContent = `🛒 Cart (${cart.length})`
     cartitems.textContent = `Cart Items: [${cart}]`
