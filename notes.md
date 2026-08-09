@@ -241,3 +241,23 @@ Click Nike again Nike should be removed:
 cart = [
     Adidas
 ];
+
+
+=====================================================================================
+🧠 Remember this rule
+
+For some():
+If I'm checking whether something exists → use ===.
+cart.some(item => item === selectedProduct)
+
+For your removal with filter():
+Keep everything except the selected item → use !==.
+cart.filter(item => item !== selectedProduct)
+
+So you now have:
+
+some()   → "Does it exist?"
+           ===
+
+filter() → "Keep everything except it"
+           !==
