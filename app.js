@@ -1,7 +1,9 @@
 const productList = document.querySelector("#product-list")
 const cartCountElement = document.querySelector("#cart-count")
+const cartitems = document.querySelector("#cart-items")
 
 let cartCountValue = 0;
+let cart = [];
 
 
 products.forEach(product =>{
@@ -38,20 +40,37 @@ products.forEach(product =>{
     // Add to Cart (UI Only)
     addToCartButton.addEventListener("click", (event) => {
 
+    // Selected product
+    const selectedProduct = product.name;
+
     if(event.target.textContent === "Add to Cart"){
         event.target.textContent = "Added ✓";
         event.target.classList.add("added");
         cartCountValue++;
+
+        // Real Cart Data
+        cart.push(selectedProduct)
     }else{
         event.target.textContent = "Add to Cart"
         cartCountValue--
         event.target.classList.remove("added")
+
+        // Real Cart Data
+        cart = cart.filter(item =>{
+            return item !== selectedProduct
+        })
     }
     
-    cartCountElement.textContent = `🛒 Cart (${cartCountValue})`
+    cartCountElement.textContent = `🛒 Cart (${cart.length})`
+    cartitems.textContent = `Cart Items: [${cart}]`
+
+    
+
+    
+
 
     });
 
 
-})
 
+})
