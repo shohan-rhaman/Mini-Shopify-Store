@@ -47,7 +47,6 @@ products.forEach(product =>{
         return item === selectedProduct
     })
 
-
     // apply condition is the prodcut exist or not? true or false?
     if(!isCart){
         cart.push(selectedProduct)
@@ -64,7 +63,7 @@ products.forEach(product =>{
     }
 
 
-    /*if(event.target.textContent === "Add to Cart"){
+    /* if(event.target.textContent === "Add to Cart"){
         event.target.textContent = "Added ✓";
         event.target.classList.add("added");
         //cartCountValue++;

@@ -261,3 +261,30 @@ some()   → "Does it exist?"
 
 filter() → "Keep everything except it"
            !==
+
+
+============================================================================================
+
+# 🛒 Sprint 2 — Feature 4: Cart Items as Product Objects
+
+Right now your cart contains only names:
+let cart = [
+    "Nike Air Max",
+    "Adidas Hoodie"
+];
+
+That works for showing names, but a real cart needs more information. For example:
+
+[
+    {
+        id: 1,
+        name: "Nike Air Max",
+        price: 120,
+        category: "Shoes",
+        quantity: 1
+    }
+]
+
+Now we can eventually calculate: Nike Air Max × 1 = $120
+
+and later: Nike Air Max × 2 = $240
