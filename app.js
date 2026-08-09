@@ -41,15 +41,17 @@ products.forEach(product =>{
     addToCartButton.addEventListener("click", (event) => {
 
     // Selected product
-    const selectedProduct = product.name
+    //const selectedProduct = product.name
     
     const isCart = cart.some(item =>{
-        return item === selectedProduct
+        return item.id === product.id
     })
+
+
 
     // apply condition is the prodcut exist or not? true or false?
     if(!isCart){
-        cart.push(selectedProduct)
+        cart.push(product)
         event.target.textContent = "Added ✓"
         event.target.classList.add("added")
     }else{
@@ -58,9 +60,11 @@ products.forEach(product =>{
 
         // remove cart item
         cart = cart.filter(item =>{
-            return item !== selectedProduct
+            return item.id !== product.id
         })
     }
+
+    console.log(cart)
 
 
     /* if(event.target.textContent === "Add to Cart"){
@@ -82,7 +86,7 @@ products.forEach(product =>{
     } */
     
     cartCountElement.textContent = `🛒 Cart (${cart.length})`
-    cartitems.textContent = `Cart Items: [${cart}]`
+    cartitems.textContent = `Cart Items: [${cart.map(item => item.name).join(", ")}]`
 
 
     });
