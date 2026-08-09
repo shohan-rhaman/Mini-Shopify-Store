@@ -2,7 +2,7 @@ const productList = document.querySelector("#product-list")
 const cartCountElement = document.querySelector("#cart-count")
 const cartitems = document.querySelector("#cart-items")
 
-let cartCountValue = 0;
+//let cartCountValue = 0;
 let cart = [];
 
 
@@ -41,18 +41,18 @@ products.forEach(product =>{
     addToCartButton.addEventListener("click", (event) => {
 
     // Selected product
-    const selectedProduct = product.name;
+    const selectedProduct = product.name
 
     if(event.target.textContent === "Add to Cart"){
         event.target.textContent = "Added ✓";
         event.target.classList.add("added");
-        cartCountValue++;
+        //cartCountValue++;
 
         // Real Cart Data
         cart.push(selectedProduct)
     }else{
         event.target.textContent = "Add to Cart"
-        cartCountValue--
+        //cartCountValue--
         event.target.classList.remove("added")
 
         // Real Cart Data
@@ -63,10 +63,6 @@ products.forEach(product =>{
     
     cartCountElement.textContent = `🛒 Cart (${cart.length})`
     cartitems.textContent = `Cart Items: [${cart}]`
-
-    
-
-    
 
 
     });
