@@ -38,7 +38,40 @@ products.forEach(product =>{
 
     
     // Add to Cart (UI Only)
-    addToCartButton.addEventListener("click", (event) => {
+    addToCartButton.addEventListener("click", (event)=>{
+
+        const isInCart = cart.some(item =>{
+            return item.id === product.id
+        })
+
+
+        if(!isInCart){
+            event.target.textContent = "Added ✓"
+            event.target.classList.add("added")
+
+            // ADD PRODUCT OBJECT
+            cart.push(product)
+        }else{
+            event.target.textContent = "Add to Cart"
+            event.target.classList.remove("added")
+
+            // remove product object
+            cart = cart.filter(item =>{
+                return item.id !== product.id
+            })
+        }
+
+        // update cart count
+        cartCountElement.textContent = `🛒 Cart  (${cart.length})`
+        // Update cart items display
+        cartitems.textContent = `🛒 Items [${cart.map(item => item.name).join(", ")}]`
+
+    })
+
+    
+
+
+    /*addToCartButton.addEventListener("click", (event) => {
 
     // Selected product
     //const selectedProduct = product.name
@@ -83,13 +116,13 @@ products.forEach(product =>{
         cart = cart.filter(item =>{
             return item !== selectedProduct
         })
-    } */
+    } 
     
     cartCountElement.textContent = `🛒 Cart (${cart.length})`
     cartitems.textContent = `Cart Items: [${cart.map(item => item.name).join(", ")}]`
 
 
-    });
+    }); */
 
 
 
